@@ -1,4 +1,4 @@
-package Main;
+package CharacterAndLetterCount;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -11,6 +11,7 @@ public class Main {
         System.out.print("Enter a string: ");
         enterString = scanner.nextLine();
         System.out.println(enterString);
+
 
         //Split string and count word
         String[] words = enterString.split("\\s+");
