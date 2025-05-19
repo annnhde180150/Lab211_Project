@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        while (true) {
+        boolean choice = true;
+        while (choice) {
             //Enter input Number base
             System.out.println("=== Number Base Converter ===");
             System.out.println("Choose input base:");
@@ -49,6 +50,22 @@ public class Main {
             }else{
                 System.out.println("Out put value:"+outputValue);
             }
+            boolean IsContinute = true;
+            while (IsContinute){
+                System.out.println("Do you want to continue? (Y/N):");
+                String exit = sc.nextLine();
+                if (exit.equalsIgnoreCase("y")){
+                    System.out.println("Thank you!");
+                    IsContinute = false;
+                    choice = false;
+                }
+                else
+                {
+                    System.out.println("Invalid input. Try again");
+                }
+            }
+
+
         }
     }
 
