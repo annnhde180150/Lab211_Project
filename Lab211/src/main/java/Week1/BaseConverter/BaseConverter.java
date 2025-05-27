@@ -57,16 +57,15 @@ public class BaseConverter {
                 return null;
             }
 
-            //Change decimal to binary
-            if(input == 0) return "0";
+           // update here
             StringBuilder binary = new StringBuilder();
-            while (input > 0) {
+            while(input>0){
                 int remainder = input % 2;
                 binary.insert(0, remainder);
                 input /= 2;
             }
-            //return binary string
             return binary.toString();
+
         }
 
         //Binary to decimal

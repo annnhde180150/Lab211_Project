@@ -1,6 +1,8 @@
 package Week1.CharacterAndLetterCount;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.StringTokenizer;
 
 public class CharacterAndLetterCount {
     private String input;
@@ -8,36 +10,22 @@ public class CharacterAndLetterCount {
         this.input = input;
     }
 
-    public void letterCount(String input){
+    public Map<String, Integer> letterCount(){
         //Split string and count word
-        String[] words = input.split("\\s+");
-        int wordCount = 0;
-        for (String word : words) {
-            if(!word.isEmpty())
-                wordCount++;
-        }
+        Map<String, Integer> kq = new HashMap<>();
+        StringTokenizer tokenizer = new StringTokenizer(input);
+        while (tokenizer.hasMoreTokens()) {
 
-        //Count word check exist
-        System.out.println("Work count:" + wordCount);
-        HashMap<String, Integer> map = new HashMap<>();
+            String word = tokenizer.nextToken();
+            kq.put(word, kq.getOrDefault(word, kq.getOrDefault(word,0)) + 1);
 
-        for (String word : words) {
-            if(!word.isEmpty()){
+        }
+        return kq;
 
-                if(map.containsKey(word)){
-                    int count = map.get(word);
-                    map.put(word, count + 1);
-                }else{
-                    map.put(word, 1);
-                }
-            }
-        }
-        for (String word : map.keySet()) {
-            System.out.println(word + ": " + map.get(word));
-        }
+
     }
 
-    public void characterCount(String input){
+    public void characterCount(){
         //Count character
         HashMap<Character, Integer> charCountMap = new HashMap<>();
         for (int i=0 ; i < input.length() ;i++ ){

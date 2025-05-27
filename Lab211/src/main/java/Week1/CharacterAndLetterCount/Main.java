@@ -1,5 +1,4 @@
-package Week1.CharacterAndLetterCount;
-
+package Week1.CharacterAndLetterCount; 
 import java.util.Scanner;
 
 public class Main {
@@ -13,9 +12,9 @@ public class Main {
 
         CharacterAndLetterCount characterAndLetterCount = new CharacterAndLetterCount(enterString);
         //Letter count
-        characterAndLetterCount.letterCount(enterString);
+        System.out.println(characterAndLetterCount.letterCount());
         //Character count
-        characterAndLetterCount.characterCount(enterString);
+        characterAndLetterCount.characterCount();
         scanner.close();
     }
 }
