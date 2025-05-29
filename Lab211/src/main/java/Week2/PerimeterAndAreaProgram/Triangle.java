@@ -1,45 +1,13 @@
 package Week2.PerimeterAndAreaProgram;
 
 public class Triangle extends Shape {
-    
     private double sideA;
     private double sideB;
     private double sideC;
 
-    public Triangle() {
-        this.sideA = InputUtils.getDouble("Please enter the length of side A of the triangle: ");
-        this.sideB = InputUtils.getDouble("Please enter the length of side B of the triangle: ");
-        this.sideC = InputUtils.getDouble("Please enter the length of side C of the triangle: ");
-    }
-    
-
     public Triangle(double sideA, double sideB, double sideC) {
         this.sideA = sideA;
         this.sideB = sideB;
-        this.sideC = sideC;
-    }
-
-    public double getSideA() {
-        return sideA;
-    }
-
-    public void setSideA(double sideA) {
-        this.sideA = sideA;
-    }
-
-    public double getSideB() {
-        return sideB;
-    }
-
-    public void setSideB(double sideB) {
-        this.sideB = sideB;
-    }
-
-    public double getSideC() {
-        return sideC;
-    }
-
-    public void setSideC(double sideC) {
         this.sideC = sideC;
     }
 
@@ -50,8 +18,8 @@ public class Triangle extends Shape {
 
     @Override
     public double getArea() {
-        double p = getPerimeter() / 2;
-        return Math.sqrt(p * (p - sideA) * (p - sideB) * (p - sideC));
+        double s = getPerimeter() / 2;
+        return Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
     }
 
     @Override
@@ -60,7 +28,7 @@ public class Triangle extends Shape {
         System.out.println("Side A: " + sideA);
         System.out.println("Side B: " + sideB);
         System.out.println("Side C: " + sideC);
-        System.out.println("Area: " + getArea());
+        System.out.printf("Area: %.2f\n", getArea());
         System.out.println("Perimeter: " + getPerimeter());
     }
 }
